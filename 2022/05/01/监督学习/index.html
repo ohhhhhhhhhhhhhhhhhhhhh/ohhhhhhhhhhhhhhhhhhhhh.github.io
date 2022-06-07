@@ -85,7 +85,7 @@ IconifyProviders = {
 <p>回归问题：设法预测连续值得属性，我们想要预测连续输出的值。</p>
 <p>分类问题（离散值的出）</p>
 <p><strong>具体流程（以房价预测模型为例）</strong></p>
-<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501110300304.png" alt="image-20220501110300304" style="zoom: 33%;" />
+<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501110300304.png" alt="image-20220501110300304" style="zoom: 33%;" / loading="lazy">
 
 <p>以房价预测模型为例，我们提供一个训练集进行机器学习算法得到一个线性拟合函数（假设函数 hypothesis，通常用“h”表示）。h是引导x‘s得到y’s的一个函数。</p>
 <p><strong>本例线性回归的目标预测函数</strong> </p>
@@ -93,38 +93,38 @@ IconifyProviders = {
 <p>$θ_i’s:$ 模型参数（Parameters）</p>
 <p>确定模型参数，我们要让每个训练样本的预测值与实际值差的平方之和的1/(2M)最小。也就是我们要找到一组（$θ_0,θ_1$），使得下面的表达式值最小。</p>
 <p>按惯例，我们把这个关于$θ$函数定义为代价函数（也被称作平方误差(代价)函数）</p>
-<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501201713466.png" alt="image-20220501201713466" style="zoom: 33%;" />
+<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501201713466.png" alt="image-20220501201713466" style="zoom: 33%;" / loading="lazy">
 
 <h4 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h4><p>为了更好的了解代价函数，我们先考虑单个参数的情形，如下图：</p>
-<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501201703812.png" alt="image-20220501201703812" style="zoom:33%;" />
+<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501201703812.png" alt="image-20220501201703812" style="zoom:33%;" / loading="lazy">
 
 <p>从起始点出发，通过不断取θ的值，绘制出代价函数的函数图像，其中最低（最靠近x轴）的点对应的θ值就是我们所要求的最佳拟合参数。</p>
-<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501201647523.png" alt="image-20220501201647523" style="zoom: 67%;" />
+<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501201647523.png" alt="image-20220501201647523" style="zoom: 67%;" / loading="lazy">
 
 <p>下面我们继续考虑两个参数时的情形</p>
-<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501181110044.png" alt="image-20220501181110044" style="zoom:50%;" />
+<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501181110044.png" alt="image-20220501181110044" style="zoom:50%;" / loading="lazy">
 
 <p>从上边的例子我们容易指导，如果想要的代价函数$J(θ_0,θ_1)$的图像是三维的，如图。</p>
-<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501181520326.png" alt="image-20220501181520326" style="zoom:50%;" />
+<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501181520326.png" alt="image-20220501181520326" style="zoom:50%;" / loading="lazy">
 
 <p>为了更好的表示，我们会使用等高线图（Contour figures），即具有相同函数值的点在同一条线上。</p>
-<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501181737052.png" alt="image-20220501181737052" style="zoom:50%;" />
+<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501181737052.png" alt="image-20220501181737052" style="zoom:50%;" / loading="lazy">
 
 <p>但我们希望的是由一个高效的算法算出代价函数的最小值而非画出图像再来找，而且很多由含有多个特征参数的高维的函数图像我们也没有办法绘制。</p>
 <h4 id="梯度下降算法"><a href="#梯度下降算法" class="headerlink" title="梯度下降算法"></a>梯度下降算法</h4><p>本例中给出利用梯度下降算法求出代价函数$J(θ_0,θ_1，…)$的最小值。</p>
-<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501193625416.png" alt="梯度下降算法概述" style="zoom: 67%;" />
+<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501193625416.png" alt="梯度下降算法概述" style="zoom: 67%;" / loading="lazy">
 
 
 
-<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501201550864.png" alt="image-20220501201550864" style="zoom: 67%;" />
+<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501201550864.png" alt="image-20220501201550864" style="zoom: 67%;" / loading="lazy">
 
 
 
-<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501205635903.png" alt="image-20220501205635903" style="zoom:50%;" />
+<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501205635903.png" alt="image-20220501205635903" style="zoom:50%;" / loading="lazy">
 
 <p>该公式的α表示学习效率（learning rate），用来控制我们以多大的幅度（步长）来更新这个模型参数。注意，两个参数会同时进行修改。第二部份是导数项（斜率），在不断靠近局部最优解的过程中对应的值（斜率）会不断变小。</p>
 <p>首先，我们借助算法，对于给定不同的初始值，总会找到相应的局部最优解（斜率为0）。<strong>但对于线性回归方程而言，其对于的代价函数势必为凹凸函数（碗状）</strong>如下图，<strong>即局部最优解就是全局最优解</strong>。</p>
-<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501220750772.png" alt="线性回归的代价函数图像" style="zoom:50%;" />
+<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501220750772.png" alt="线性回归的代价函数图像" style="zoom:50%;" / loading="lazy">
 
 <p>$目标预测函数：h_\theta(x) = \theta_0+\theta_1x_1$</p>
 <p>$代价函数：J(\theta_0,\theta_1) = \frac{1}{2m} \sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})^2$</p>
@@ -133,18 +133,18 @@ IconifyProviders = {
 <p>$\theta_0:=\theta_0-\alpha \sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})$</p>
 <p>$\theta_1:=\theta_1-\alpha \sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{i})*x_1$</p>
 <h5 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h5><p>我们从初始点出发，一步步最小化代价函数，进而找到对应的目标预测曲线</p>
-<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501221336906.png" alt="image-20220501221336906" style="zoom:50%;" />
+<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501221336906.png" alt="image-20220501221336906" style="zoom:50%;" / loading="lazy">
 
 <h5 id="Batch-梯度下降算法"><a href="#Batch-梯度下降算法" class="headerlink" title="Batch 梯度下降算法"></a>Batch 梯度下降算法</h5><p>对于上面的算法实现，我们每步调整都遍历了整个数据集。我们称之为“Batch”梯度下降算法</p>
 <h4 id="含有多个变量、特征的模型"><a href="#含有多个变量、特征的模型" class="headerlink" title="含有多个变量、特征的模型"></a>含有多个变量、特征的模型</h4><p>还是借助房屋价格预测的例子，现在我们新添加卧室数量，房屋年龄，楼层高度等新的特征变量，如下图：</p>
-<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220502114723207.png" alt="多特征房屋预测模型模型" style="zoom: 80%;" />
+<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220502114723207.png" alt="多特征房屋预测模型模型" style="zoom: 80%;" / loading="lazy">
 
 
 
 <h4 id="矩阵乘法的妙用"><a href="#矩阵乘法的妙用" class="headerlink" title="矩阵乘法的妙用"></a>矩阵乘法的妙用</h4><p>很多编程语言都有很好的线性代数函数库，能够高效的实现矩阵之间的运算（至少比for很多次快）。</p>
 <h5 id="矩阵x矩阵"><a href="#矩阵x矩阵" class="headerlink" title="矩阵x矩阵"></a>矩阵x矩阵</h5><p>假设我们想要通过房屋大小预测房屋价格，同时我们现在有多条预测函数，我们希望每个预测函数都对同一房屋大小进行预测。</p>
 <p>那么我们通过矩阵的乘法就可以通过一次运算计算并打包多条式子，如下图。</p>
-<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220502110431751.png" alt="image-20220502110431751" style="zoom: 50%;" />
+<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220502110431751.png" alt="image-20220502110431751" style="zoom: 50%;" / loading="lazy">
 
 <p>相应的，我的的函数也需要调整为：</p>
 <p>$目标预测函数:h_\theta(x) = \theta_0x_0+\theta_1x_1+\theta_2x_2+\theta_3x_3+\theta_4x_4=\ \theta^TX $</p>
@@ -160,22 +160,22 @@ IconifyProviders = {
 <h4 id="特征缩放梯度下降"><a href="#特征缩放梯度下降" class="headerlink" title="特征缩放梯度下降"></a>特征缩放梯度下降</h4><p>如果你有一个机器学习问题，这个问题有多个特征，如果你可以确保不同特征得取值在一个相近的范围内，那么这一梯度下降法就能更快得收敛。</p>
 <p>如果两个特征范围相差较大，那么在梯度下降的过程中会更加缓慢、来回震荡，才找到一个全局最小值。</p>
 <p>相应的，如果我们对特征变量做一定的处理（除某个数），让值的<strong>范围相近</strong>，那么这样梯度下降的算法更加快的收敛。</p>
-<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220502133606133.png" alt="image-20220502133606133" style="zoom: 67%;" />
+<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220502133606133.png" alt="image-20220502133606133" style="zoom: 67%;" / loading="lazy">
 
 <p>更一般的，我们执行特征缩放时，我们通常的目的是把特征的取值约束到[-1,1]（并不一定是±1。±3，±5，±0.5…都行）之间。类似的如果你的特征取值在一个非常小或非常大的范围，如（[-100,100],[-0.00001,0.00004]）都是不太恰当的。</p>
 <h5 id="均值归一化"><a href="#均值归一化" class="headerlink" title="均值归一化"></a>均值归一化</h5><p>对于直接除以特征的最大值进行特征缩放以外，我们还可以通过均值归一化的操作实现特征缩放。</p>
 <p>对于每一个特征$x_i$都希望用$x_i-u_i$代替，使得所有特征的平均值为0（通常的我们不对$x_0$进行操作）。具体实现如下：</p>
-<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220502135210735.png" alt="image-20220502135210735" style="zoom:67%;" />
+<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220502135210735.png" alt="image-20220502135210735" style="zoom:67%;" / loading="lazy">
 
 <p>我们所有特征$x_i$减去原先特征范围的平均值$μ_i$，再除以特征变量的原先取值范围（1~2000就除2000），使得最后我们每一特征变量的取值范围相近，进而实现特征缩放的目的。</p>
-<h4 id="学习效率α"><a href="#学习效率α" class="headerlink" title="学习效率α"></a>学习效率α</h4><img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220502135622977.png" alt="解决问题" style="zoom:67%;" />
+<h4 id="学习效率α"><a href="#学习效率α" class="headerlink" title="学习效率α"></a>学习效率α</h4><img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220502135622977.png" alt="解决问题" style="zoom:67%;" / loading="lazy">
 
-<h5 id="确定梯度下降算法的正确性"><a href="#确定梯度下降算法的正确性" class="headerlink" title="确定梯度下降算法的正确性"></a>确定梯度下降算法的正确性</h5><img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220502141107779.png" alt="image-20220502141107779" style="zoom: 67%;" />
+<h5 id="确定梯度下降算法的正确性"><a href="#确定梯度下降算法的正确性" class="headerlink" title="确定梯度下降算法的正确性"></a>确定梯度下降算法的正确性</h5><img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220502141107779.png" alt="image-20220502141107779" style="zoom: 67%;" / loading="lazy">
 
 <p>我们可以绘制代价函数J关于迭代次数（下降了多少次）的函数图像，通过观察图像走势判断该算法是否正确。由上面图像可以指导，随着迭代次数的不断增加，代价函数J不断收敛于一个值，那么就可以说明代价函数是收敛的进而判断该算法的正确性。同时，直观上看，该图像还可以告诉你该算法有没有正确的运行。</p>
 <p>另外的，我们还可以通过取定一个非常小的数字ξ（图中是1e-3）进行自动的收敛测试，当上次迭代与此迭代的代价函数值之差小于ξ时，说明代价函数已经收敛。但是，对于阈值ξ的选取通常来说不太容易，</p>
 <p>下面给出两种错误算法对应的图像（α取值过大）：</p>
-<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220502142049939.png" alt="image-20220502142049939" style="zoom: 67%;" />
+<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220502142049939.png" alt="image-20220502142049939" style="zoom: 67%;" / loading="lazy">
 
 <ul>
 <li>在代价函数J的基本假设（适用于线性回归）之下，数学家已经证明当α取值足够小，那么每次迭代之后代价函数J(θ)都会下降。如果图像发现有上升，那么就可以考虑是不是α取值过大。</li>

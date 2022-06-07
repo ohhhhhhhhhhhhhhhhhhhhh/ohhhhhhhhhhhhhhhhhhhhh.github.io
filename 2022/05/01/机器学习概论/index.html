@@ -88,7 +88,7 @@ IconifyProviders = {
 <p><strong>y’s</strong>: 输出变量/预测的目标变量</p>
 <p>**(x,y)**： 一个训练样本</p>
 <p><strong>$(x^{(i)},y^{(i)})$</strong>:  第i个训练样本</p>
-<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501105746227.png" alt="image-20220501105746227" style="zoom:50%;" />
+<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501105746227.png" alt="image-20220501105746227" style="zoom:50%;" / loading="lazy">
 
 <h3 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h3><p>监督学习是指，给算法一个数据集，其中包含了明确告知正确答案。算法的目的使给出更多的新的答案。</p>
 <p>每一个问题都有一个正确的答案。</p>
@@ -97,7 +97,7 @@ IconifyProviders = {
 <p>回归问题：设法预测连续值得属性，我们想要预测连续输出的值。</p>
 <p>分类问题（离散值的出）</p>
 <p><strong>具体流程（以房价预测模型为例）</strong></p>
-<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501110300304.png" alt="image-20220501110300304" style="zoom:50%;" />
+<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501110300304.png" alt="image-20220501110300304" style="zoom:50%;" / loading="lazy">
 
 <p>以房价预测模型为例，我们提供一个训练集进行机器学习算法得到一个线性拟合函数（假设函数 hypothesis，通常用“h”表示）。h是引导x‘s得到y’s的一个函数。</p>
 <p><strong>本例线性回归的目标预测函数</strong> </p>
@@ -105,23 +105,23 @@ IconifyProviders = {
 <p>$θ_i’s:$ 模型参数（Parameters）</p>
 <p>确定模型参数，我们要让每个训练样本的预测值与实际值差值的平方之和的1/(2M)最小。也就是我们要找到一组（$θ_0,θ_1$），使得下面的表达式值最小。</p>
 <p>按惯例，我们把这个关于$θ$函数定义为代价函数（也被称作平方误差(代价)函数）</p>
-<p><img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501201713466.png" alt="image-20220501201713466"></p>
+<p><img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501201713466.png" alt="image-20220501201713466" loading="lazy"></p>
 <h4 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h4><p>为了更好的了解代价函数，我们先考虑一个参数的情形，如下图、</p>
-<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501201703812.png" alt="image-20220501201703812"  />
+<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501201703812.png" alt="image-20220501201703812"  / loading="lazy">
 
 <p>通过不断取θ的值，绘制出代价函数的函数图像，其中最低（最靠近x轴）的点对应的θ值就是我们所要求的最佳拟合参数。</p>
-<p><img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501201647523.png" alt="image-20220501201647523"></p>
+<p><img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501201647523.png" alt="image-20220501201647523" loading="lazy"></p>
 <p>下面我们继续考虑两个参数时的情形</p>
-<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501181110044.png" alt="image-20220501181110044" style="zoom:50%;" />
+<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501181110044.png" alt="image-20220501181110044" style="zoom:50%;" / loading="lazy">
 
-<p>从上边的例子我们容易指导，如果想要的代价函数$J(θ_0,θ_1)$的图像是三维的，如图。<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501181520326.png" alt="image-20220501181520326" style="zoom:50%;" /></p>
-<p>但为了更好的表示，我们会使用等高线图（Contour figures），即具有相同函数值的点在同一条线上。<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501181737052.png" alt="image-20220501181737052" style="zoom:50%;" /></p>
+<p>从上边的例子我们容易指导，如果想要的代价函数$J(θ_0,θ_1)$的图像是三维的，如图。<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501181520326.png" alt="image-20220501181520326" style="zoom:50%;" / loading="lazy"></p>
+<p>但为了更好的表示，我们会使用等高线图（Contour figures），即具有相同函数值的点在同一条线上。<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501181737052.png" alt="image-20220501181737052" style="zoom:50%;" / loading="lazy"></p>
 <p>但我们希望的是由一个高效的算法算出代价函数的最小值而非画出图像再来找，而且很多由含有多个特征参数的高维的函数图像我们也没有办法绘制。</p>
 <h4 id="梯度下降算法"><a href="#梯度下降算法" class="headerlink" title="梯度下降算法"></a>梯度下降算法</h4><p>本例中给出利用梯度下降算法求出代价函数$J(θ_0,θ_1，…)$的最小值。</p>
-<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501193625416.png" alt="image-20220501193625416" style="zoom: 67%;" />
+<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501193625416.png" alt="image-20220501193625416" style="zoom: 67%;" / loading="lazy">
 
 <hr>
-<p><img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501201550864.png" alt="image-20220501201550864"></p>
+<p><img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20220501201550864.png" alt="image-20220501201550864" loading="lazy"></p>
 <h3 id="非监督学习"><a href="#非监督学习" class="headerlink" title="非监督学习"></a>非监督学习</h3><p>在非监督学习中，我们所收集到的数据集通常没有标签或者带有相同的标签。我们得到一个数据集，不知道被用来干嘛，也不知道每个数据值表示什么。</p>
 <p>聚类算法</p>
 <p>鸡尾酒会问题。有很多人在说话</p>
