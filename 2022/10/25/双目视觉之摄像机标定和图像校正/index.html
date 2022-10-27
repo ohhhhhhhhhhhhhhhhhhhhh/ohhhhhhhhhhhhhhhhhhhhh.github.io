@@ -16,24 +16,26 @@
   <meta name="author" content="社会失眠人士">
   <meta name="keywords" content="">
   
-    <meta name="description" content="在写了在写了。  双目视觉主要包括相机标定、图片畸变矫正、摄像机校正、图片匹配、3D恢复五个部分。">
+    <meta name="description" content="本着开源共享的优良传统，本文的风格可能略显风骚随性，看官切莫怪责。 在写了在写了。感觉知识高大上，最后不还是各种调库？？ 刚刚起步，分享很杂，勿怪！！  下面这篇博文利用python语言，搭建了双目三维重建系统，有码，可作为复现路线参考。值得说道的点是他的码风很清爽。 (87条消息) 双目三维重建系统(双目标定+立体校正+双目测距+点云显示)Python_AI吃大瓜的博客-CSDN">
 <meta property="og:type" content="article">
-<meta property="og:title" content="双目视觉（一）相机标定和图像矫正">
+<meta property="og:title" content="双目视觉">
 <meta property="og:url" content="http://example.com/2022/10/25/%E5%8F%8C%E7%9B%AE%E8%A7%86%E8%A7%89%E4%B9%8B%E6%91%84%E5%83%8F%E6%9C%BA%E6%A0%87%E5%AE%9A%E5%92%8C%E5%9B%BE%E5%83%8F%E6%A0%A1%E6%AD%A3/index.html">
 <meta property="og:site_name" content="我瞎写写，你瞎逛逛">
-<meta property="og:description" content="在写了在写了。  双目视觉主要包括相机标定、图片畸变矫正、摄像机校正、图片匹配、3D恢复五个部分。">
+<meta property="og:description" content="本着开源共享的优良传统，本文的风格可能略显风骚随性，看官切莫怪责。 在写了在写了。感觉知识高大上，最后不还是各种调库？？ 刚刚起步，分享很杂，勿怪！！  下面这篇博文利用python语言，搭建了双目三维重建系统，有码，可作为复现路线参考。值得说道的点是他的码风很清爽。 (87条消息) 双目三维重建系统(双目标定+立体校正+双目测距+点云显示)Python_AI吃大瓜的博客-CSDN">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/img/bf6946a27c6ae2808c1844b2ae1a4fb.jpg">
 <meta property="article:published_time" content="2022-10-25T08:36:07.411Z">
-<meta property="article:modified_time" content="2022-10-25T09:55:46.072Z">
+<meta property="article:modified_time" content="2022-10-27T10:50:38.908Z">
 <meta property="article:author" content="社会失眠人士">
 <meta property="article:tag" content="双目视觉">
 <meta property="article:tag" content="相机标定">
 <meta property="article:tag" content="图像校正">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/img/bf6946a27c6ae2808c1844b2ae1a4fb.jpg">
   
   
   
-  <title>双目视觉（一）相机标定和图像矫正 - 我瞎写写，你瞎逛逛</title>
+  <title>双目视觉 - 我瞎写写，你瞎逛逛</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="双目视觉（一）相机标定和图像矫正"></span>
+            <span id="subtitle" data-typed-text="双目视觉"></span>
           
         </div>
 
@@ -221,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          47 字
+          609 字
         
       </span>
     
@@ -232,7 +234,7 @@
         
         
         
-          1 分钟
+          6 分钟
         
       </span>
     
@@ -270,15 +272,46 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">双目视觉（一）相机标定和图像矫正</h1>
+            <h1 style="display: none">双目视觉</h1>
             
             
               <div class="markdown-body">
                 
                 <blockquote>
-<p>在写了在写了。</p>
+<p>本着开源共享的优良传统，本文的风格可能略显风骚随性，看官切莫怪责。</p>
+<p>在写了在写了。感觉知识高大上，最后不还是各种调库？？
+刚刚起步，分享很杂，勿怪！！</p>
 </blockquote>
-<p>双目视觉主要包括相机标定、图片畸变矫正、摄像机校正、图片匹配、3D恢复五个部分。</p>
+<p>下面这篇博文利用python语言，搭建了双目三维重建系统，有码，可作为复现路线参考。值得说道的点是他的码风很清爽。</p>
+<p><a
+target="_blank" rel="noopener" href="https://panjinquan.blog.csdn.net/article/details/121301896">(87条消息)
+双目三维重建系统(双目标定+立体校正+双目测距+点云显示)Python_AI吃大瓜的博客-CSDN博客_双目相机三维重建</a></p>
+<p><strong>下文对双目视觉如何从二维走向三维做出了简单的阐释</strong>，文章通俗易懂，建议阅读作为项目开展基础。</p>
+<p><a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/dverdon/p/5609124.html">双目视觉几何框架详解
+- _木头人 - 博客园 (cnblogs.com)</a></p>
+<p><strong>图像矫正码参考</strong></p>
+<p><a
+target="_blank" rel="noopener" href="https://blog.csdn.net/qq_22059843/article/details/103400094">(87条消息)
+单、双目相机标定及畸变校正、立体矫正的python实现（含拍照程序）_逆光525的博客-CSDN博客_python校正图片</a></p>
+<p><strong>相机标定参考</strong></p>
+<p><a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/zyly/p/9366080.html#_label3">第六节、双目视觉之相机标定
+- 大奥特曼打小怪兽 - 博客园 (cnblogs.com)</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://blog.csdn.net/qq_30234963/article/details/121908465">(87条消息)
+opencv进行双目标定以及极线校正
+python代码_不能改id好烦啊的博客-CSDN博客_opencv极线校正</a></p>
+<p><strong>立体匹配参考</strong></p>
+<p><a
+target="_blank" rel="noopener" href="https://blog.csdn.net/rs_lys/article/details/83302323?ops_request_misc=%7B%22request%5Fid%22%3A%22166686753116800180644248%22%2C%22scm%22%3A%2220140713.130102334.pc%5Fblog.%22%7D&amp;request_id=166686753116800180644248&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_ecpm_v1~hot_rank-1-83302323-null-null.article_score_rank_blog&amp;utm_term=立体匹配&amp;spm=1018.2226.3001.4450">(87条消息)
+双目立体匹配步骤详解_李迎松~的博客-CSDN博客_双目立体匹配</a></p>
+<p>这一块可能需要用CNN，那快速入门下pytorch吧~</p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/889dbc684622">PyTorch 深度学习:
+60分钟快速入门 - 简书 (jianshu.com)</a></p>
+<h3 id="相机标定图像矫正部分">相机标定+图像矫正部分</h3>
+<p>本来想写点东西的，但“前人之述备矣”，又何必重复造轮子呢哈哈（偷懒</p>
+<p><img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/img/bf6946a27c6ae2808c1844b2ae1a4fb.jpg" srcset="/img/loading.gif" lazyload alt="bf6946a27c6ae2808c1844b2ae1a4fb" style="zoom:33%;" /></p>
 
                 
               </div>
@@ -328,7 +361,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>双目视觉（一）相机标定和图像矫正</div>
+      <div>双目视觉</div>
       <div>http://example.com/2022/10/25/双目视觉之摄像机标定和图像校正/</div>
     </div>
     <div class="license-meta">
