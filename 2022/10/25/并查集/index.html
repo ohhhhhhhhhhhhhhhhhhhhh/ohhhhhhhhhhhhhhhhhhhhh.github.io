@@ -16,12 +16,12 @@
   <meta name="author" content="社会失眠人士">
   <meta name="keywords" content="">
   
-    <meta name="description" content="并查集 定义 ​ 并查集是一种树型的数据结构，常用于处理一些不相交集合的合并及查询问题（即所谓的并、查）。例如，我们可以用并查集来判断一个森林中有几棵树、某个节点是否属于某棵树等。 ​ 并查集的主要作用是求连通分支数（如果一个图中所有点都存在可达关系（直接或间接相连），则此图的连通分支数为1；如果此图有两大各自全部可达，则此图的连通分支数为2……） 码   所有结点初始祖先为自己">
+    <meta name="description" content="并查集 定义 ​		并查集是一种树型的数据结构，常用于处理一些不相交集合的合并及查询问题（即所谓的并、查）。例如，我们可以用并查集来判断一个森林中有几棵树、某个节点是否属于某棵树等。 ​		并查集的主要作用是求连通分支数（如果一个图中所有点都存在可达关系（直接或间接相连），则此图的连通分支数为1；如果此图有两大各自全部可达，则此图的连通分支数为2……） 码   所有结点初始祖先为自己。 find（">
 <meta property="og:type" content="article">
 <meta property="og:title" content="并查集">
 <meta property="og:url" content="http://example.com/2022/10/25/%E5%B9%B6%E6%9F%A5%E9%9B%86/index.html">
 <meta property="og:site_name" content="我瞎写写，你瞎逛逛">
-<meta property="og:description" content="并查集 定义 ​ 并查集是一种树型的数据结构，常用于处理一些不相交集合的合并及查询问题（即所谓的并、查）。例如，我们可以用并查集来判断一个森林中有几棵树、某个节点是否属于某棵树等。 ​ 并查集的主要作用是求连通分支数（如果一个图中所有点都存在可达关系（直接或间接相连），则此图的连通分支数为1；如果此图有两大各自全部可达，则此图的连通分支数为2……） 码   所有结点初始祖先为自己">
+<meta property="og:description" content="并查集 定义 ​		并查集是一种树型的数据结构，常用于处理一些不相交集合的合并及查询问题（即所谓的并、查）。例如，我们可以用并查集来判断一个森林中有几棵树、某个节点是否属于某棵树等。 ​		并查集的主要作用是求连通分支数（如果一个图中所有点都存在可达关系（直接或间接相连），则此图的连通分支数为1；如果此图有两大各自全部可达，则此图的连通分支数为2……） 码   所有结点初始祖先为自己。 find（">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-10-25T08:45:50.336Z">
 <meta property="article:modified_time" content="2022-11-02T03:11:11.482Z">
@@ -42,6 +42,8 @@
   <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/KaTeX/0.16.2/katex.min.css" />
 
 
 
@@ -275,10 +277,8 @@
                 
                 <h2 id="并查集">并查集</h2>
 <h3 id="定义">定义</h3>
-<p>​
-并查集是一种树型的数据结构，常用于处理一些不相交集合的合并及查询问题（即所谓的并、查）。例如，我们可以用并查集来判断一个森林中有几棵树、某个节点是否属于某棵树等。</p>
-<p>​
-并查集的主要作用是<strong>求连通分支数</strong>（如果一个图中所有点都存在可达关系（直接或间接相连），则此图的连通分支数为1；如果此图有两大各自全部可达，则此图的连通分支数为2……）</p>
+<p>​		并查集是一种树型的数据结构，常用于处理一些不相交集合的合并及查询问题（即所谓的并、查）。例如，我们可以用并查集来判断一个森林中有几棵树、某个节点是否属于某棵树等。</p>
+<p>​		并查集的主要作用是<strong>求连通分支数</strong>（如果一个图中所有点都存在可达关系（直接或间接相连），则此图的连通分支数为1；如果此图有两大各自全部可达，则此图的连通分支数为2……）</p>
 <h3 id="码">码</h3>
 <blockquote>
 <ul>
@@ -408,6 +408,12 @@
             </div>
 
             
+  <article id="comments" lazyload>
+    
+
+  </article>
+
+
           </article>
         </div>
       </div>
@@ -455,7 +461,6 @@
 
   
   
-
 
 
 
@@ -650,49 +655,6 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
-
-  
-      <script>
-        if (!window.MathJax) {
-          window.MathJax = {
-            tex    : {
-              inlineMath: { '[+]': [['$', '$']] }
-            },
-            loader : {
-              load: ['ui/lazy']
-            },
-            options: {
-              renderActions: {
-                insertedScript: [200, () => {
-                  document.querySelectorAll('mjx-container').forEach(node => {
-                    let target = node.parentNode;
-                    if (target.nodeName.toLowerCase() === 'li') {
-                      target.parentNode.classList.add('has-jax');
-                    }
-                  });
-                }, '', false]
-              }
-            }
-          };
-        } else {
-          MathJax.startup.document.state(0);
-          MathJax.texReset();
-          MathJax.typeset();
-          MathJax.typesetPromise();
-        }
-
-        Fluid.events.registerRefreshCallback(function() {
-          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
-            MathJax.startup.document.state(0);
-            MathJax.texReset();
-            MathJax.typeset();
-            MathJax.typesetPromise();
-          }
-        });
-      </script>
-    
-
-  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 

@@ -16,12 +16,12 @@
   <meta name="author" content="社会失眠人士">
   <meta name="keywords" content="">
   
-    <meta name="description" content="并查集 定义 ​ 并查集是一种树型的数据结构，常用于处理一些不相交集合的合并及查询问题（即所谓的并、查）。例如，我们可以用并查集来判断一个森林中有几棵树、某个节点是否属于某棵树等。 ​ 并查集的主要作用是求连通分支数（如果一个图中所有点都存在可达关系（直接或间接相连），则此图的连通分支数为1；如果此图有两大各自全部可达，则此图的连通分支数为2……） 码   所有结点初始祖先为自己">
+    <meta name="description" content="并查集 定义 ​		并查集是一种树型的数据结构，常用于处理一些不相交集合的合并及查询问题（即所谓的并、查）。例如，我们可以用并查集来判断一个森林中有几棵树、某个节点是否属于某棵树等。 ​		并查集的主要作用是求连通分支数（如果一个图中所有点都存在可达关系（直接或间接相连），则此图的连通分支数为1；如果此图有两大各自全部可达，则此图的连通分支数为2……） 码   所有结点初始祖先为自己。 find（">
 <meta property="og:type" content="article">
 <meta property="og:title" content="并查集">
 <meta property="og:url" content="http://example.com/2022/11/02/%E6%A0%91%E5%BD%A2%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="我瞎写写，你瞎逛逛">
-<meta property="og:description" content="并查集 定义 ​ 并查集是一种树型的数据结构，常用于处理一些不相交集合的合并及查询问题（即所谓的并、查）。例如，我们可以用并查集来判断一个森林中有几棵树、某个节点是否属于某棵树等。 ​ 并查集的主要作用是求连通分支数（如果一个图中所有点都存在可达关系（直接或间接相连），则此图的连通分支数为1；如果此图有两大各自全部可达，则此图的连通分支数为2……） 码   所有结点初始祖先为自己">
+<meta property="og:description" content="并查集 定义 ​		并查集是一种树型的数据结构，常用于处理一些不相交集合的合并及查询问题（即所谓的并、查）。例如，我们可以用并查集来判断一个森林中有几棵树、某个节点是否属于某棵树等。 ​		并查集的主要作用是求连通分支数（如果一个图中所有点都存在可达关系（直接或间接相连），则此图的连通分支数为1；如果此图有两大各自全部可达，则此图的连通分支数为2……） 码   所有结点初始祖先为自己。 find（">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/img/image-20221101161910738.png">
 <meta property="article:published_time" content="2022-11-02T03:17:32.159Z">
@@ -44,6 +44,8 @@
   <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/KaTeX/0.16.2/katex.min.css" />
 
 
 
@@ -221,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          6.7k 字
+          7k 字
         
       </span>
     
@@ -232,7 +234,7 @@
         
         
         
-          56 分钟
+          59 分钟
         
       </span>
     
@@ -277,10 +279,8 @@
                 
                 <h2 id="并查集">并查集</h2>
 <h3 id="定义">定义</h3>
-<p>​
-并查集是一种树型的数据结构，常用于处理一些不相交集合的合并及查询问题（即所谓的并、查）。例如，我们可以用并查集来判断一个森林中有几棵树、某个节点是否属于某棵树等。</p>
-<p>​
-并查集的主要作用是<strong>求连通分支数</strong>（如果一个图中所有点都存在可达关系（直接或间接相连），则此图的连通分支数为1；如果此图有两大各自全部可达，则此图的连通分支数为2……）</p>
+<p>​		并查集是一种树型的数据结构，常用于处理一些不相交集合的合并及查询问题（即所谓的并、查）。例如，我们可以用并查集来判断一个森林中有几棵树、某个节点是否属于某棵树等。</p>
+<p>​		并查集的主要作用是<strong>求连通分支数</strong>（如果一个图中所有点都存在可达关系（直接或间接相连），则此图的连通分支数为1；如果此图有两大各自全部可达，则此图的连通分支数为2……）</p>
 <h3 id="码">码</h3>
 <blockquote>
 <ul>
@@ -292,7 +292,7 @@
 </blockquote>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">define</span> MAXN 100</span><br><span class="hljs-type">int</span> Ppre[MAXN];<br><br><span class="hljs-comment">// 初始化</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">init</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span></span>&#123;<br>    <span class="hljs-keyword">for</span>(pre[i]=i;        <span class="hljs-comment">//存放每个结点的结点（或双亲结点）</span><br>    &#125;<br>&#125;<br><span class="hljs-comment">// 查</span><br><span class="hljs-type">int</span> <span class="hljs-built_in">find</span>(<span class="hljs-type">int</span> x)					<br>&#123;<br>	<span class="hljs-keyword">while</span>(pre[x] != x)	<span class="hljs-comment">// 		</span><br>		x = pre[x];				<br>	<span class="hljs-keyword">return</span> x;					<br>&#125;<br><br><span class="hljs-comment">// 并</span><br><span class="hljs-type">void</span> <span class="hljs-built_in">join</span>(<span class="hljs-type">int</span> x,<span class="hljs-type">int</span> y)                     <br>&#123;<br>    <span class="hljs-type">int</span> fx=<span class="hljs-built_in">find</span>(x), fy=<span class="hljs-built_in">find</span>(y);            <br>    <span class="hljs-keyword">if</span>(fx != fy)                           <br>        pre[fx]=fy;                        <br>&#125;<br><br></code></pre></td></tr></table></figure>
 <h2 id="树状数组">树状数组</h2>
-<p>树状数组可解决<strong>1.单点修改，单点查询，2.区间修改，单点查询，3.区间查询，区间修改（复杂，建议用线段树处理）</strong>等线段树可解决的大部分问题。</p>
+<p>树状数组可解决**1.单点修改，单点查询，2.区间修改，单点查询，3.区间查询，区间修改（复杂，建议用线段树处理）**等线段树可解决的大部分问题。</p>
 <p>相较于线段树，树状数组处理起来有着更高的效率（指码字快），二者处理问题的时间复杂度大多数情况下相仿（常数级别差异），但树状数组可拓展性较差，处理问题能力有限。</p>
 <h3 id="问题引入">问题引入</h3>
 <blockquote>
@@ -301,29 +301,26 @@
 <li>将某一个数加上 x</li>
 <li>求出某区间每一个数的和</li>
 </ul>
-<p>来源：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3374">P3374
-【模板】树状数组 1 - 洛谷</a></p>
+<p>来源：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3374">P3374 【模板】树状数组 1 - 洛谷 </a></p>
 </blockquote>
 <p>一种暴力的想法是利用O（1）时间复杂度进行单点修改，然后更新改数组的前缀和O（n），但如果进行m次查询，总算法时间复杂度为O（mn），显然是会TLE的。于是，就有了接下来树状数组or线段树O（mlogn）的做法。</p>
-<h3 id="lowbitx运算">lowbit(x)运算</h3>
+<h3 id="lowbit-x-运算">lowbit(x)运算</h3>
 <p>在进行树状数组的介绍前，我们需要知道啥是lowbit（x），因为树状数组的各项操作都是建立在这基础之上滴。</p>
 <p><strong>所谓lowbit(x)，就是求一个非负整数x在二进制表示下，最低位的1及其后面的0构成的数字，如</strong></p>
-<p><span class="math display">\[lowbit(44) = lowbit((101100)_2) =
-(100)_2 = 4\]</span></p>
+<p class="katex-block "><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>l</mi><mi>o</mi><mi>w</mi><mi>b</mi><mi>i</mi><mi>t</mi><mo stretchy="false">(</mo><mn>44</mn><mo stretchy="false">)</mo><mo>=</mo><mi>l</mi><mi>o</mi><mi>w</mi><mi>b</mi><mi>i</mi><mi>t</mi><mo stretchy="false">(</mo><mo stretchy="false">(</mo><mn>101100</mn><msub><mo stretchy="false">)</mo><mn>2</mn></msub><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">(</mo><mn>100</mn><msub><mo stretchy="false">)</mo><mn>2</mn></msub><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">lowbit(44) = lowbit((101100)_2) = (100)_2 = 4
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mord mathnormal">bi</span><span class="mord mathnormal">t</span><span class="mopen">(</span><span class="mord">44</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mord mathnormal">bi</span><span class="mord mathnormal">t</span><span class="mopen">((</span><span class="mord">101100</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">100</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">4</span></span></span></span></span></p>
 <p>好的，那么我们怎么求这lowbit(x)呢，其实很简单，一条式子足够了。</p>
-<p><span class="math display">\[lowbit(x) = x \&amp; (-x)\]</span></p>
+<p class="katex-block "><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>l</mi><mi>o</mi><mi>w</mi><mi>b</mi><mi>i</mi><mi>t</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mi>x</mi><mi mathvariant="normal">&amp;</mi><mo stretchy="false">(</mo><mo>−</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">lowbit(x) = x \&amp; (-x)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mord mathnormal">bi</span><span class="mord mathnormal">t</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">x</span><span class="mord">&amp;</span><span class="mopen">(</span><span class="mord">−</span><span class="mord mathnormal">x</span><span class="mclose">)</span></span></span></span></span></p>
 <blockquote>
 <p>解释：</p>
-<p><strong>44的二进制表示为<span
-class="math inline">\((101100)_2\)</span>，-44的二进制表示为<span
-class="math inline">\((010100)_2\)</span></strong>，然后我们把44和-44进行<strong>按位与</strong>运算得到二进制数<span
-class="math inline">\((000100)_2\)</span>，也就是十进制的4。</p>
+<p><strong>44的二进制表示为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>101100</mn><msub><mo stretchy="false">)</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">(101100)_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">101100</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，-44的二进制表示为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>010100</mn><msub><mo stretchy="false">)</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">(010100)_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">010100</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></strong>，然后我们把44和-44进行<strong>按位与</strong>运算得到二进制数<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>000100</mn><msub><mo stretchy="false">)</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">(000100)_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">000100</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，也就是十进制的4。</p>
 <p>注意： -44的二进制表示是44取反后+1。</p>
 </blockquote>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">lowbit</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span> </span>&#123;<span class="hljs-keyword">return</span> x &amp; (-x);&#125;<br></code></pre></td></tr></table></figure>
 <h3 id="树状数组结构分析">树状数组结构分析</h3>
 <p>下面是一个树状数组的结构，至于其如何构建，稍后再说。</p>
-<p><img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/img/image-20221101161910738.png" srcset="/img/loading.gif" lazyload alt="image-20221101161910738" style="zoom:33%;" /></p>
+<img src="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/img/image-20221101161910738.png" srcset="/img/loading.gif" lazyload alt="image-20221101161910738" style="zoom:33%;" />
 <p>对于一个长度为n的数组a[],我们引入一个数组t[x]表示已x为根得子树中叶子节点值的和。</p>
 <blockquote>
 <p>t[1] = a[1]</p>
@@ -334,16 +331,10 @@ class="math inline">\((000100)_2\)</span>，也就是十进制的4。</p>
 </blockquote>
 <p>单独这样来看，似乎找不到什么规律，但是，结合前边提到过的lowbit(x)运算，我们可以发现：</p>
 <ul>
-<li><strong>树状数组中节点<span
-class="math inline">\(t[x]\)</span>的父亲节点为<span
-class="math inline">\(t[x+lowbit(x)]\)</span></strong>。</li>
-<li>相邻子树的根节点对应下标的差值也为lowbit，如t[6] =
-t[7-lowbit(7)],t[4] = t[6-lowbit(6)]…</li>
-<li>如果要求前n个元素的和，sum = t[n] + t[n-lowbit(n)] + t[(n-lowbit(n))
-- lowbit(n-lowbit(n))] …</li>
-<li>如果要求区间<span
-class="math inline">\([l,r]\)</span>之间元素的和，就做个差分<span
-class="math inline">\(sum(l,r) = sum(r) - sum(l-1)\)</span></li>
+<li><strong>树状数组中节点<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo stretchy="false">[</mo><mi>x</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">t[x]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">t</span><span class="mopen">[</span><span class="mord mathnormal">x</span><span class="mclose">]</span></span></span></span>的父亲节点为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo stretchy="false">[</mo><mi>x</mi><mo>+</mo><mi>l</mi><mi>o</mi><mi>w</mi><mi>b</mi><mi>i</mi><mi>t</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">t[x+lowbit(x)]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">t</span><span class="mopen">[</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mord mathnormal">bi</span><span class="mord mathnormal">t</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)]</span></span></span></span></strong>。</li>
+<li>相邻子树的根节点对应下标的差值也为lowbit，如t[6] = t[7-lowbit(7)],t[4] = t[6-lowbit(6)]…</li>
+<li>如果要求前n个元素的和，sum = t[n]  + t[n-lowbit(n)] + t[(n-lowbit(n)) - lowbit(n-lowbit(n))] …</li>
+<li>如果要求区间<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>l</mi><mo separator="true">,</mo><mi>r</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[l,r]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">]</span></span></span></span>之间元素的和，就做个差分<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mi>u</mi><mi>m</mi><mo stretchy="false">(</mo><mi>l</mi><mo separator="true">,</mo><mi>r</mi><mo stretchy="false">)</mo><mo>=</mo><mi>s</mi><mi>u</mi><mi>m</mi><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo><mo>−</mo><mi>s</mi><mi>u</mi><mi>m</mi><mo stretchy="false">(</mo><mi>l</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">sum(l,r) = sum(r) - sum(l-1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">u</span><span class="mord mathnormal">m</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">u</span><span class="mord mathnormal">m</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">s</span><span class="mord mathnormal">u</span><span class="mord mathnormal">m</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span></li>
 </ul>
 <p>利用以上几点性质，关于树状数组的基本操作我们就都可以实现啦。</p>
 <h3 id="单点修改-区间查询">单点修改 &amp; 区间查询</h3>
@@ -351,50 +342,38 @@ class="math inline">\(sum(l,r) = sum(r) - sum(l-1)\)</span></li>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">update_one</span><span class="hljs-params">(<span class="hljs-type">int</span> x,<span class="hljs-type">int</span> k)</span></span>&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = x; i &lt;= n; i += <span class="hljs-built_in">lowbit</span>(i))<br>        t[i] += k;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h4 id="单点or区间查询">单点or区间查询</h4>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">query</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span></span>&#123;<br>    <span class="hljs-type">int</span> ans = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span>(x)<br>        ans += t[x],<br>        x -= <span class="hljs-built_in">lowbit</span>(x);<br>    <span class="hljs-keyword">return</span> ans;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">range_query</span><span class="hljs-params">(<span class="hljs-type">int</span> l,<span class="hljs-type">int</span> r)</span></span>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">query</span>(r) - <span class="hljs-built_in">query</span>(l<span class="hljs-number">-1</span>); <span class="hljs-comment">// 存储数组的时候从1开始，避免l-1&lt;0发生</span><br>&#125;<br></code></pre></td></tr></table></figure>
-<h4 id="例题ac代码">例题AC代码</h4>
-<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3374">P3374
-【模板】树状数组 1 - 洛谷</a></p>
+<h4 id="例题AC代码">例题AC代码</h4>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3374">P3374 【模板】树状数组 1 - 洛谷 </a></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-keyword">define</span> int long long</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> max_n 500005</span><br><br><span class="hljs-type">int</span> n,m,a[max_n],t[max_n],op,x,k,y;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-type">int</span> <span class="hljs-title">lowbit</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span> </span>&#123;<span class="hljs-keyword">return</span> x &amp; (-x);&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-type">void</span> <span class="hljs-title">update_one</span><span class="hljs-params">(<span class="hljs-type">int</span> x,<span class="hljs-type">int</span> k)</span></span>&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = x; i &lt;= n; i += <span class="hljs-built_in">lowbit</span>(i))   t[i] += k;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-type">int</span> <span class="hljs-title">query</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span></span>&#123;<br>    <span class="hljs-type">int</span> ans = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span>(x)<br>        ans += t[x],<br>        x -= <span class="hljs-built_in">lowbit</span>(x);<br>    <span class="hljs-keyword">return</span> ans;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-type">int</span> <span class="hljs-title">range_query</span><span class="hljs-params">(<span class="hljs-type">int</span> l,<span class="hljs-type">int</span> r)</span></span>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">query</span>(r) - <span class="hljs-built_in">query</span>(l<span class="hljs-number">-1</span>); <span class="hljs-comment">// 存储数组的时候从1开始，避免l-1&lt;0发生</span><br>&#125;<br><br><br><span class="hljs-function"><span class="hljs-type">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    cin &gt;&gt; n &gt;&gt; m;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++)&#123;<br>        cin &gt;&gt; a[i];<br>        <span class="hljs-built_in">update_one</span>(i,a[i]);    <br>    &#125;<br>    <span class="hljs-keyword">while</span>(m--)&#123;<br>        cin &gt;&gt; op;<br>        <span class="hljs-keyword">if</span>(op == <span class="hljs-number">1</span>) &#123;<br>            cin &gt;&gt; x &gt;&gt; k;<br>            <span class="hljs-built_in">update_one</span>(x,k);<br>        &#125;<br>        <span class="hljs-keyword">if</span>(op == <span class="hljs-number">2</span>) &#123;<br>            cin &gt;&gt; x &gt;&gt; y;<br>            cout &lt;&lt; <span class="hljs-built_in">range_query</span>(x,y) &lt;&lt; endl;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="区间修改单点查询">区间修改&amp;单点查询</h3>
-<h4 id="问题引入-1">问题引入</h4>
+<h3 id="区间修改-单点查询">区间修改&amp;单点查询</h3>
+<h4 id="问题引入-2">问题引入</h4>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3368">P3368
-【模板】树状数组 2</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3368">P3368 【模板】树状数组 2 </a></p>
 <p>如题，已知一个数列，你需要进行下面两种操作：</p>
-<ol type="1">
+<ol>
 <li>将某区间每一个数加上 x*；</li>
 <li>求出某一个数的值。</li>
 </ol>
 <p><strong>输入格式</strong></p>
 <p>第一行包含两个整数 N、M，分别表示该数列数字的个数和操作的总个数。</p>
-<p>第二行包含 N 个用空格分隔的整数，其中第 i个数字表示数列第
-i项的初始值。</p>
+<p>第二行包含 N 个用空格分隔的整数，其中第 i个数字表示数列第 i项的初始值。</p>
 <p>接下来 M 行每行包含 2 或 4个整数，表示一个操作，具体如下：</p>
-<p>操作 1： 格式：<code>1 x y k</code> 含义：将区间 [x,y]
-内每个数加上k；</p>
-<p>操作 2： 格式：<code>2 x</code> 含义：输出第 x<em>x</em>
-个数的值。</p>
+<p>操作 1： 格式：<code>1 x y k</code> 含义：将区间 [x,y] 内每个数加上k；</p>
+<p>操作 2： 格式：<code>2 x</code> 含义：输出第 x<em>x</em> 个数的值。</p>
 <p><strong>输出格式</strong></p>
 <p>输出包含若干行整数，即为所有操作 22 的结果。</p>
 </blockquote>
 <p>关于区间修改，我们需要引入一个差分的概念。并使用树状数组维护a[]的差分数组t[]，所谓差分数组，就是每一项都为原数组前后两项之差，其具有如下性质：</p>
 <ul>
-<li><span class="math inline">\(t[i] = a[i] - a[i-1]\)</span></li>
-<li><span class="math inline">\(a[k] =
-\sum_\limits{i=1}^{k}t[i]\)</span></li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo stretchy="false">[</mo><mi>i</mi><mo stretchy="false">]</mo><mo>=</mo><mi>a</mi><mo stretchy="false">[</mo><mi>i</mi><mo stretchy="false">]</mo><mo>−</mo><mi>a</mi><mo stretchy="false">[</mo><mi>i</mi><mo>−</mo><mn>1</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">t[i] = a[i] - a[i-1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">t</span><span class="mopen">[</span><span class="mord mathnormal">i</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mopen">[</span><span class="mord mathnormal">i</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mopen">[</span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">]</span></span></span></span></li>
+<li><span class='katex-error' title='ParseError: KaTeX parse error: Expected group after &#039;_&#039; at position 12: a[k] = \sum_̲\limits{i=1}^{k…'>a[k] = \sum_\limits{i=1}^{k}t[i]</span></li>
 </ul>
-<p>于是乎，我们需要在区间<span
-class="math inline">\([L,R]\)</span>上加<span
-class="math inline">\(k\)</span>时，我们只需要令<span
-class="math inline">\(t[L] += k, t[R+1] -=
-k\)</span>,这样操作可以保证:</p>
-<p><span class="math display">\[\sum\limits_{i = 1}^{R+1}t[r] \equiv
-a[R+1],  \\
-   \sum\limits_{i = 1}^{j}t[i] \equiv a[j]+k, (R \leq j \leq R).\\
-\]</span></p>
+<p>于是乎，我们需要在区间<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>L</mi><mo separator="true">,</mo><mi>R</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[L,R]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal">L</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mclose">]</span></span></span></span>上加<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>时，我们只需要令<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo stretchy="false">[</mo><mi>L</mi><mo stretchy="false">]</mo><mo>+</mo><mo>=</mo><mi>k</mi><mo separator="true">,</mo><mi>t</mi><mo stretchy="false">[</mo><mi>R</mi><mo>+</mo><mn>1</mn><mo stretchy="false">]</mo><mo>−</mo><mo>=</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">t[L] += k, t[R+1] -= k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">t</span><span class="mopen">[</span><span class="mord mathnormal">L</span><span class="mclose">]</span><span class="mord">+</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">t</span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">]</span><span class="mord">−</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>,这样操作可以保证:</p>
+<p class="katex-block "><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>R</mi><mo>+</mo><mn>1</mn></mrow></munderover><mi>t</mi><mo stretchy="false">[</mo><mi>r</mi><mo stretchy="false">]</mo><mo>≡</mo><mi>a</mi><mo stretchy="false">[</mo><mi>R</mi><mo>+</mo><mn>1</mn><mo stretchy="false">]</mo><mo separator="true">,</mo><mspace linebreak="newline"></mspace><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>j</mi></munderover><mi>t</mi><mo stretchy="false">[</mo><mi>i</mi><mo stretchy="false">]</mo><mo>≡</mo><mi>a</mi><mo stretchy="false">[</mo><mi>j</mi><mo stretchy="false">]</mo><mo>+</mo><mi>k</mi><mo separator="true">,</mo><mo stretchy="false">(</mo><mi>R</mi><mo>≤</mo><mi>j</mi><mo>≤</mo><mi>R</mi><mo stretchy="false">)</mo><mi mathvariant="normal">.</mi><mspace linebreak="newline"></mspace></mrow><annotation encoding="application/x-tex">\sum\limits_{i = 1}^{R+1}t[r] \equiv a[R+1],  \\
+\sum\limits_{i = 1}^{j}t[i] \equiv a[j]+k, (R \leq j \leq R).\\ </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:3.106em;vertical-align:-1.2777em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.8283em;"><span style="top:-1.8723em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.05em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.00773em;">R</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.2777em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">t</span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≡</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">]</span><span class="mpunct">,</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:3.1364em;vertical-align:-1.2777em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.8588em;"><span style="top:-1.8723em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.05em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3471em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.2777em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">t</span><span class="mopen">[</span><span class="mord mathnormal">i</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≡</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.854em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mclose">)</span><span class="mord">.</span></span><span class="mspace newline"></span></span></span></span></p>
 <p><strong>例题AC代码</strong></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-keyword">define</span> int long long</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> max_n 500005</span><br><br><span class="hljs-type">int</span> n,m,a[max_n],t[max_n],op,x,k,y;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-type">int</span> <span class="hljs-title">lowbit</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span> </span>&#123;<span class="hljs-keyword">return</span> x &amp; (-x);&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-type">void</span> <span class="hljs-title">update</span><span class="hljs-params">(<span class="hljs-type">int</span> x,<span class="hljs-type">int</span> k)</span></span>&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = x; i &lt;= n; i += <span class="hljs-built_in">lowbit</span>(i))   t[i] += k;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-type">int</span> <span class="hljs-title">query</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span></span>&#123;<br>    <span class="hljs-type">int</span> ans = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span>(x)<br>        ans += t[x],<br>        x -= <span class="hljs-built_in">lowbit</span>(x);<br>    <span class="hljs-keyword">return</span> ans;<br>&#125;<br><br><br><span class="hljs-function"><span class="hljs-type">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    cin &gt;&gt; n &gt;&gt; m;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++)&#123;<br>        cin &gt;&gt; a[i];<br>        <span class="hljs-built_in">update</span>(i,a[i]-a[i<span class="hljs-number">-1</span>]);    <span class="hljs-comment">// 维护a[]的差分数组 .a[0] = 0</span><br>    &#125;<br>    <br>    <span class="hljs-keyword">while</span>(m--)&#123;<br>        cin &gt;&gt; op;<br>        <span class="hljs-keyword">if</span>(op == <span class="hljs-number">1</span>) &#123;<br>            cin &gt;&gt; l &gt;&gt; r &gt;&gt; k;<br>            <span class="hljs-built_in">update</span>(l,k),<span class="hljs-built_in">update</span>(r+<span class="hljs-number">1</span>,-k);<br>        &#125;<br>        <span class="hljs-keyword">if</span>(op == <span class="hljs-number">2</span>) &#123;<br>            cin &gt;&gt; x ;<br>            cout &lt;&lt; <span class="hljs-built_in">query</span>(x) &lt;&lt; endl;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="区间修改区间查询">区间修改&amp;区间查询</h3>
+<h3 id="区间修改-区间查询">区间修改&amp;区间查询</h3>
 <h2 id="线段树">线段树</h2>
 <blockquote>
 <p>说实话、写一次吐一次。</p>
@@ -508,6 +487,12 @@ a[R+1],  \\
             </div>
 
             
+  <article id="comments" lazyload>
+    
+
+  </article>
+
+
           </article>
         </div>
       </div>
@@ -555,7 +540,6 @@ a[R+1],  \\
 
   
   
-
 
 
 
@@ -750,49 +734,6 @@ a[R+1],  \\
 
 
   <script>Fluid.plugins.imageCaption();</script>
-
-  
-      <script>
-        if (!window.MathJax) {
-          window.MathJax = {
-            tex    : {
-              inlineMath: { '[+]': [['$', '$']] }
-            },
-            loader : {
-              load: ['ui/lazy']
-            },
-            options: {
-              renderActions: {
-                insertedScript: [200, () => {
-                  document.querySelectorAll('mjx-container').forEach(node => {
-                    let target = node.parentNode;
-                    if (target.nodeName.toLowerCase() === 'li') {
-                      target.parentNode.classList.add('has-jax');
-                    }
-                  });
-                }, '', false]
-              }
-            }
-          };
-        } else {
-          MathJax.startup.document.state(0);
-          MathJax.texReset();
-          MathJax.typeset();
-          MathJax.typesetPromise();
-        }
-
-        Fluid.events.registerRefreshCallback(function() {
-          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
-            MathJax.startup.document.state(0);
-            MathJax.texReset();
-            MathJax.typeset();
-            MathJax.typesetPromise();
-          }
-        });
-      </script>
-    
-
-  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
