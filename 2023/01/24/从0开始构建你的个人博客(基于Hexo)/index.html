@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://typora-dx.oss-cn-guangzhou.aliyuncs.com/image-20230124212737297.png">
 <meta property="og:image" content="https://pic2.zhimg.com/v2-67a8165154f4c5f4a6333e76e78ed815_r.jpg">
 <meta property="article:published_time" content="2023-01-24T13:48:01.600Z">
-<meta property="article:modified_time" content="2023-01-24T14:21:06.117Z">
+<meta property="article:modified_time" content="2023-01-25T03:39:25.140Z">
 <meta property="article:author" content="社会失眠人士">
 <meta property="article:tag" content="个人博客">
 <meta name="twitter:card" content="summary_large_image">
@@ -237,7 +237,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.9k 字
+          2.1k 字
         
       </span>
     
@@ -248,7 +248,7 @@
         
         
         
-          16 分钟
+          18 分钟
         
       </span>
     
@@ -364,10 +364,13 @@
 <h3 id="Step5：安装-hexo-deployer-git：">Step5：<strong>安装 hexo-deployer-git</strong>：</h3>
 <p>在那个小黑窗口输入</p>
 <figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">npm install hexo-deployer-git <span class="hljs-comment">--save</span><br></code></pre></td></tr></table></figure>
-<p>然后<strong>修改 _config.yml</strong> 文件末尾的 Deployment 部分，修改成如下：</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">deploy:</span><br><span class="hljs-symbol">  type:</span> git<br><span class="hljs-symbol">  repository:</span> git@github.com:用户名/用户名.github.io.git<br><span class="hljs-symbol">  branch:</span> master<br></code></pre></td></tr></table></figure>
+<p>安装完毕后，<strong>打开并修改 _config.yml</strong> 文件末尾的 Deployment 部分，修改成如下：</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">deploy:</span><br><span class="hljs-symbol">  type:</span> git<br><span class="hljs-symbol">  repository:</span> git@github.com:用户名/用户名.github.io.git<br><span class="hljs-symbol">  branch:</span> main<br></code></pre></td></tr></table></figure>
 <p>完成后运行 <code>hexo d</code> 将网站上传部署到 GitHub Pages。</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo d</span><br></code></pre></td></tr></table></figure>
 <p>完成！这时访问我们的 GitHub 域名 <code>https://用户名.github.io</code> 就可以看到 Hexo 网站了。</p>
+<h2 id="一些Hexo指令">一些Hexo指令</h2>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs axapta">hexo init <span class="hljs-meta"># 初始化</span><br><br>hexo <span class="hljs-keyword">server</span> <span class="hljs-meta">#  启动本地服务器，用于预览主题</span><br>			<span class="hljs-meta">#  等效hexo s</span><br><br>hexo <span class="hljs-keyword">new</span> “<span class="hljs-string">&quot;文字标题&quot;</span> <span class="hljs-meta"># 新建一篇指定标题的文章</span><br>					<span class="hljs-meta"># 等效 hexo n</span><br>					<br>hexo clean  <span class="hljs-meta"># 清除缓存和已生成的静态文件</span><br>			<span class="hljs-meta"># 网站显示异常可以实施</span><br><br>hexo generate 		<span class="hljs-meta"># 生成网站静态文件到默认设置的 public 文件夹</span><br>					<span class="hljs-meta"># 等效hexo g</span><br><br>hexo deploy <span class="hljs-meta"># 自动生成网站静态文件，并部署到设定的仓库</span><br>			<span class="hljs-meta"># 等效 hexo d</span><br></code></pre></td></tr></table></figure>
 <h2 id="主题配置">主题配置</h2>
 <p><a target="_blank" rel="noopener" href="https://fluid-dev.github.io/hexo-fluid-docs/">Hexo Fluid 用户手册 (fluid-dev.github.io)</a>这是我正在使用的主题，里面教程已经非常详细了。</p>
 <h2 id="软件推荐">软件推荐</h2>
